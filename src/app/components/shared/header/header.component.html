@@ -1,0 +1,27 @@
+<header class="header">
+    <div class="container">
+        <!-- Left Section (Location) -->
+        <div class="left">
+            <span class="location">Select Location <mat-icon>expand_more</mat-icon></span>
+        </div>
+
+        <!-- Center Section (Logo) -->
+        <div class="center">
+            <span class="logo">ROCKWELL CINEMAS</span>
+        </div>
+
+        <!-- Right Section (Hamburger + Icons) -->
+        <div class="right">
+            <mat-icon class="menu-icon" (click)="toggleMenu()">menu</mat-icon>
+            <mat-icon>search</mat-icon>
+            <mat-icon>account_circle</mat-icon>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown" *ngIf="menuOpen">
+        <span (click)="closeMenu()">Select Location <mat-icon>expand_more</mat-icon></span>
+        <span (click)="closeMenu()">Search <mat-icon>search</mat-icon></span>
+        <span (click)="closeMenu()">Account <mat-icon>account_circle</mat-icon></span>
+    </div>
+</header>

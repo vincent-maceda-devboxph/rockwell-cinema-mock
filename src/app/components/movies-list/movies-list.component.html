@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="movie-filters">
+        <button class="filter-btn" style="text-decoration: underline;">All</button> |
+        <button class="filter-btn">Now Showing</button> |
+        <button class="filter-btn">Coming Soon</button>
+
+        <div class="dropdowns">
+            <span>Cinema Type ▼</span>
+            <span>Genre ▼</span>
+            <span>Rating ▼</span>
+        </div>
+    </div>
+
+    <div class="movie-grid">
+        <div class="movie-card" *ngFor="let movie of movies" (click)="openModal(movie)">
+            <div class="poster" [style.backgroundImage]="'url(' + movie.posterUrl + ')'">
+                <div *ngIf="movie.advancedBooking" class="advanced-booking">
+                    <div class="advanced-booking-text">
+                        Advanced Booking
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="movie.comingSoon" class="coming-soon">
+                <span>Coming Soon</span>
+                <span class="rating">{{ movie.rating }}</span>
+            </div>
+        </div>
+    </div>
+
+    <app-movie-details-modal *ngIf="selectedMovie" [movie]="selectedMovie" (close)="closeModal()"></app-movie-details-modal>
+</div>

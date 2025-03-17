@@ -1,0 +1,43 @@
+<div class="movie-details">
+    <div class="movie-header">
+        <img [src]="movie.bannerUrl" alt="{{ movie.title }}" class="banner">
+        <div class="movie-info">
+            <img [src]="movie.posterUrl" alt="{{ movie.title }}" class="poster">
+            <div class="details">
+                <h1>{{ movie.title }}</h1>
+                <div class="meta">
+                    <span class="duration">⏳ {{ movie.duration }} Minutes</span>
+                    <span class="rating">{{ movie.rating }}</span>
+                </div>
+                <p>{{ movie.description }}</p>
+                <button class="trailer-btn">▶ Trailer</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="showtimes-container">
+        <div class="date-selector">
+            <button *ngFor="let date of dates" class="date-btn">
+                <span class="day">{{ date.day }}</span>
+                <span class="num">{{ date.num }}</span>
+            </button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn">📍 Location</button>
+            <button class="filter-btn">🎥 Cinema</button>
+            <button class="filter-btn">🕒 Showtimes</button>
+        </div>
+
+        <div class="showtimes">
+            <div *ngFor="let cinema of cinemas" class="cinema">
+                <h3>{{ cinema.name }}</h3>
+                <div class="times">
+                    <button *ngFor="let time of cinema.times" class="time-btn">
+                        {{ time }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

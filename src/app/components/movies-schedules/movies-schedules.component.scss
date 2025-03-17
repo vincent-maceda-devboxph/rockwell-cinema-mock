@@ -1,0 +1,93 @@
+.movie-details {
+    font-family: Arial, sans-serif;
+}
+
+.movie-header {
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.movie-info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), #fff);
+}
+
+.poster {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.details h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.meta {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.trailer-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.showtimes-container {
+    padding: 20px;
+}
+
+.date-selector {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.showtimes {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cinema {
+    margin-bottom: 20px;
+}
+
+.time-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}

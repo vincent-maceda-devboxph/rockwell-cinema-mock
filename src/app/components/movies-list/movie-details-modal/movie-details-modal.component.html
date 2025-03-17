@@ -1,0 +1,23 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-btn" (click)="onClose()">×</button>
+
+        <div class="modal-details">
+            <h2>{{ movie.title }}</h2>
+            <div class="movie-meta">
+                <span class="duration">⏳ {{ movie.duration }} Minutes</span>
+                <span class="rating">{{ movie.rating }}</span>
+            </div>
+            <p><strong>{{ movie.language }}, {{ movie.genre }}</strong></p>
+            <p>{{ movie.description }}</p>
+
+            <button class="buy-tickets">Buy Tickets</button>
+            <button class="play-trailer">▶</button>
+        </div>
+
+        <!-- Movie Poster -->
+        <div class="movie-poster">
+            <img [src]="movie.posterUrl" [alt]="movie.title">
+        </div>
+    </div>
+</div>

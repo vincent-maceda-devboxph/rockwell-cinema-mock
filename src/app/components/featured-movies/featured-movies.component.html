@@ -1,0 +1,33 @@
+<div class="carousel-container">
+    <owl-carousel-o [options]="carouselOptions" #featuredMovies (changed)="changed($event)">
+        <ng-container *ngFor="let movie of movies">
+            <ng-template carouselSlide [id]="movie.title">
+                <img [src]="movie.image" [alt]="movie.title" class="carousel-image" />
+
+                <!-- Movie Overlay Content -->
+                <div class="movie-overlay">
+                    <h2 class="movie-title">{{ movie.title }}</h2>
+                    <p class="movie-genres">{{ movie.genre.join(' | ') }}</p>
+                    <p class="movie-description">{{ movie.description }}</p>
+
+                    <!-- Buttons -->
+                    <div class="movie-buttons">
+                        <button class="ticket-button">Get Tickets</button>
+                        <button class="trailer-button">
+                            <span class="play-icon">▶</span>
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+
+    <!-- Movie Navigation Buttons -->
+    <div class="movie-nav-buttons">
+        <button *ngFor="let movie of movies" 
+        (click)="changeSlide(movie.title)"
+        [disabled]="movie.title === selectedMovie">
+            {{ movie.title }}
+        </button>
+    </div>
+</div>
